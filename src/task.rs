@@ -18,7 +18,7 @@ impl fmt::Display for Task{
      fn fmt(&self,f: &mut fmt::Formatter<'_>) -> fmt::Result{
 
         let created_at = self.created_at.with_timezone(&Local).format("%F %H:%M");
-        write!(f, "{:<50} [{}]", self.text,self.created_at)
+        write!(f, "{:<50} [{}]", self.text,created_at)
      }
 
 }
@@ -43,7 +43,7 @@ fn collect_tasks(mut file: &File) -> Result<Vec<Task>> {
 
 pub fn add_task(journal_path: PathBuf,task:Task) -> Result<()>{
 
-    let mut file :File;
+    let file :File;
 
     //open the file if exists else create new file
     if Path::new(&journal_path).exists(){
