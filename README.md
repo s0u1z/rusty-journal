@@ -17,7 +17,7 @@ cargo build
 ```
 
 ```
-$ target/debug/rusty-journal -help
+$ target/debug/rusty-journal -h
 Rusty Journal 0.1.0
 A command line to-do app written in Rust
 
